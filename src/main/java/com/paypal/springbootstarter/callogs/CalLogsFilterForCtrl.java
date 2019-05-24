@@ -20,10 +20,6 @@ import com.paypal.springbootstarter.pojo.Corrsearchid;
 @Component
 public class CalLogsFilterForCtrl {
 	
-	@Autowired
-	CalLogSummaryResponse calLogSummaryResponse;
-	
-	
 //	This method will filter the cal log summary and return necessary information
 	public CalLogSummaryResponse getCalLogFilterSummary(CorrelationResponse correlationResponse){
 		
@@ -33,6 +29,7 @@ public class CalLogsFilterForCtrl {
 		System.out.println(jsonInString);
 
 		Map<String, Corrsearchid> additionalProp = new HashMap<String, Corrsearchid>();
+		CalLogSummaryResponse calLogSummaryResponse = new CalLogSummaryResponse();
 		additionalProp = correlationResponse.getAdditionalProperties();
 		for(Map.Entry<String, Corrsearchid> entry : additionalProp.entrySet()){
 			

@@ -25,15 +25,6 @@ public class CalLogsService implements CommandLineRunner {
 	CalLogSummaryResponse calLogSummaryResponse;
 	
 	RestTemplate restTemplate = new RestTemplate();
-
-/*	public CorrelationResponse getCalLogsInfo() {
-		CorrelationResponse correlationResponse = restTemplate.getForObject("http://calhadoop-vip-a.slc.paypal.com/idsearch/id/a797dcbcc8ea2", CorrelationResponse.class);
-		System.out.println(correlationResponse);
-		calLogSummaryResponse = calLogsFilterForCtrl.getCalLogFilterSummary(correlationResponse);
-		return correlationResponse;
-		
-		
-	}*/
 	
 	public CalLogSummaryResponse getCalLogsInfo(String id) {
 		CorrelationResponse correlationResponse = restTemplate.getForObject("http://calhadoop-vip-a.slc.paypal.com/idsearch/id/" + id, CorrelationResponse.class);
