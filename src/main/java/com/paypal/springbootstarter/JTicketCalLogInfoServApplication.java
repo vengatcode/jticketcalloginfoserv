@@ -8,8 +8,7 @@ public class JTicketCalLogInfoServApplication {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		SpringApplication.run(JTicketCalLogInfoServApplication.class, args);
-		
+		SpringApplication.run(JTicketCalLogInfoServApplication.class, args);	
 
 	}
 

@@ -4,12 +4,16 @@ package com.paypal.springbootstarter.pojo;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.stereotype.Component;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -18,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "tags",
     "callSummary"
 })
+//@JsonDeserialize(as = CorrCallSummary.class)
 public class Corrsearchid {
 
     /**
@@ -47,7 +52,7 @@ public class Corrsearchid {
      * 
      */
     @JsonProperty("callSummary")
-    private List<Object> callSummary = null;
+    private List<CorrCallSummary> callSummary = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -117,7 +122,7 @@ public class Corrsearchid {
      * 
      */
     @JsonProperty("callSummary")
-    public List<Object> getCallSummary() {
+    public List<CorrCallSummary> getCallSummary() {
         return callSummary;
     }
 
@@ -127,7 +132,7 @@ public class Corrsearchid {
      * 
      */
     @JsonProperty("callSummary")
-    public void setCallSummary(List<Object> callSummary) {
+    public void setCallSummary(List<CorrCallSummary> callSummary) {
         this.callSummary = callSummary;
     }
 
@@ -140,5 +145,9 @@ public class Corrsearchid {
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
     }
+
+	public Corrsearchid() {
+
+	}
 
 }

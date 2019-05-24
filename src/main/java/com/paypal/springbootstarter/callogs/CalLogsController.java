@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.paypal.springbootstarter.pojo.CalLogSummaryResponse;
 import com.paypal.springbootstarter.pojo.CorrelationResponse;
 
 
@@ -22,14 +23,14 @@ public class CalLogsController {
 	@Autowired
 	private CalLogsService calLogsService;
 	
-	@RequestMapping("/idsearch")
+/*	@RequestMapping("/idsearch")
 	public CorrelationResponse getImpactedComponent(){
 		return calLogsService.getCalLogsInfo();
 		
-	}
+	}*/
 	
 	@RequestMapping("/idsearch/{id}")
-	public CorrelationResponse getImpactedComponent(@PathVariable String id){
+	public CalLogSummaryResponse getImpactedComponent(@PathVariable String id){
 		return calLogsService.getCalLogsInfo(id);
 		
 	}
